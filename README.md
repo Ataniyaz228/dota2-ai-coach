@@ -1,131 +1,190 @@
 <div align="center">
 
-<!-- Replace with actual logo path when available -->
-<!-- <img src="./docs/logo.svg" alt="DotACoach.AI" width="180" /> -->
+<img src="./docs/logo.png" alt="Aegis.AI" width="480" />
 
-```
-  ____        _        ____                 _       _    ___
- |  _ \  ___ | |_ /\  / ___|___   __ _  __| |_    / \  |_ _|
- | | | |/ _ \| __/  \| |   / _ \ / _` |/ _` \ \  / _ \  | |
- | |_| | (_) | || /\ | |__| (_) | (_| | (_| |\ \/ / ___ \ | |
- |____/ \___/ \__\/  \\____\___/ \__,_|\__,_| \__/_/   \_\___|
-```
+<br/>
 
-**DotACoach.AI**
+![Build](https://img.shields.io/badge/build-passing-00c853?style=for-the-badge&labelColor=0d1117&logo=github-actions&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-15-white?style=for-the-badge&logo=next.js&labelColor=0d1117)
+![Django](https://img.shields.io/badge/Django-5-092e20?style=for-the-badge&logo=django&labelColor=0d1117&color=092e20)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169e1?style=for-the-badge&logo=postgresql&labelColor=0d1117&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-Celery-dc382d?style=for-the-badge&logo=redis&labelColor=0d1117&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=for-the-badge&logo=openai&labelColor=0d1117&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-00e5ff?style=for-the-badge&labelColor=0d1117)
 
-*Turn every match into actionable intelligence.*
+<br/>
 
----
+**Aegis.AI** is a full-stack intelligence platform for Dota 2 players.  
+It transforms raw match telemetry into structured, GPT-powered coaching — ranked, visual, and brutal in precision.
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square&labelColor=0d1117&color=00c853)
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js&labelColor=0d1117)
-![Django](https://img.shields.io/badge/Django-5.x-092e20?style=flat-square&logo=django&labelColor=0d1117&color=092e20)
-![Python](https://img.shields.io/badge/Python-3.12-3776ab?style=flat-square&logo=python&labelColor=0d1117)
-![OpenDota](https://img.shields.io/badge/OpenDota-API-ff6f00?style=flat-square&labelColor=0d1117)
-![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square&labelColor=0d1117)
+<br/>
 
-</div>
-
----
-
-## Demo
-
-<div align="center">
-
-<!-- PLACEHOLDER: Replace with actual demo GIF or video link -->
-<!-- <img src="./docs/demo.gif" alt="DotACoach.AI Dashboard Demo" width="100%" /> -->
-
-> Demo video / GIF will be placed here.
-> Suggested content: Dashboard overview -> Trend charts drill-down -> AI Coach match analysis flow.
+[![View Demo](https://img.shields.io/badge/-View_Demo-0d1117?style=for-the-badge&logo=youtube&logoColor=00e5ff&labelColor=0d1117)](https://github.com/Ataniyaz228/dota2-ai-coach)
+[![Report Bug](https://img.shields.io/badge/-Report_Bug-0d1117?style=for-the-badge&logo=github&logoColor=ff5252&labelColor=0d1117)](https://github.com/Ataniyaz228/dota2-ai-coach/issues)
+[![Star Repo](https://img.shields.io/github/stars/Ataniyaz228/dota2-ai-coach?style=for-the-badge&logo=github&labelColor=0d1117&color=ffd700)](https://github.com/Ataniyaz228/dota2-ai-coach)
 
 </div>
 
 ---
 
-## Interface
+## Demo & Screenshots
 
 <div align="center">
+
+<!-- PLACEHOLDER: Replace src with actual demo GIF -->
+<!-- <img src="./docs/demo.gif" alt="Aegis.AI Platform Demo" width="100%" /> -->
+
+> **[Demo GIF / Video]** — Dashboard overview, trend drill-down, AI Coach match analysis.
+
+<br/>
+
 <table>
   <tr>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Screenshot 1 — Landing / Account Input -->
-      <!-- <img src="./docs/screenshots/landing.png" alt="Landing Page" /> -->
-      <strong>Landing — Account Input</strong>
+    <td align="center">
+      <!-- PLACEHOLDER: <img src="./docs/screenshots/landing.png" width="100%" /> -->
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Landing+Page" />
+      <br/><sub><b>Account Input Terminal</b></sub>
     </td>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Screenshot 2 — Dashboard Overview -->
-      <!-- <img src="./docs/screenshots/dashboard.png" alt="Dashboard" /> -->
-      <strong>Dashboard — Performance Overview</strong>
+    <td align="center">
+      <!-- PLACEHOLDER: <img src="./docs/screenshots/dashboard.png" width="100%" /> -->
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Dashboard+Overview" />
+      <br/><sub><b>Performance Dashboard</b></sub>
     </td>
   </tr>
   <tr>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Screenshot 3 — Trend Charts + Drill-down -->
-      <!-- <img src="./docs/screenshots/trends.png" alt="Trend Charts" /> -->
-      <strong>Trend Charts — KDA / GPM over time</strong>
+    <td align="center">
+      <!-- PLACEHOLDER: <img src="./docs/screenshots/trends.png" width="100%" /> -->
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Trend+Charts" />
+      <br/><sub><b>Drill-down Trend Analytics</b></sub>
     </td>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Screenshot 4 — AI Coach Match Analysis -->
-      <!-- <img src="./docs/screenshots/ai-coach.png" alt="AI Coach" /> -->
-      <strong>AI Coach — Per-Match Analysis</strong>
+    <td align="center">
+      <!-- PLACEHOLDER: <img src="./docs/screenshots/ai-coach.png" width="100%" /> -->
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=AI+Coach" />
+      <br/><sub><b>AI Coach — Match Analysis</b></sub>
     </td>
   </tr>
 </table>
+
 </div>
 
 ---
 
 ## Core Features
 
-- **Lifetime Hero Statistics** — Global win/loss data pulled from OpenDota's `/heroes` endpoint, not limited to locally stored matches. Always reflects true career performance.
-- **Hybrid Data Architecture** — Detailed match telemetry (items, timelines, purchase logs) is stored locally for the 20 most recent matches. Global aggregates are fetched live, keeping storage lean without sacrificing accuracy.
-- **AI Coach** — Per-match GPT-powered analysis delivered in a unified chat interface. Follow-up questions retain full match context. No fragmented UI panels, no internal scrollbars.
-- **Item Purchase Timings** — Where replay data is available, significant item purchases are timestamped and surfaced directly in the match detail view and AI prompt context.
-- **Drill-down Trend Analytics** — Interactive performance charts (GPM, KDA, XPM, Last Hits, Tower Damage) across the player's last 30 matches. Chart points are clickable and navigate to full match detail.
-- **Smart Rank Mapping** — Rank tier integers are decoded into human-readable ranks (Herald 1 through Immortal) with estimated MMR ranges derived from game data.
-- **Resilient Sync Pipeline** — Background Celery worker with retry logic on OpenDota API calls. Rate-limit failures do not overwrite existing data — the worker exits cleanly and preserves the current state.
-- **Strict Dark Mode UI** — Architectural minimal design. No decorative gradients, no emoji, no "bubbly" AI aesthetics. Every element earns its place.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+### Data Intelligence
+
+![OpenDota](https://img.shields.io/badge/OpenDota-Powered-ff6f00?style=flat-square&labelColor=0d1117)
+
+- **Lifetime Hero Statistics** — True career win/loss from OpenDota's `/heroes` endpoint, not just stored matches
+- **Hybrid Data Pipeline** — Full telemetry only for last 20 matches; global stats fetched live
+- **Item Purchase Timings** — Timestamped item builds from replay data surfaced in UI and AI prompts
+- **Resilient Sync** — Celery worker with 2-attempt retry + 3s backoff; rate-limit failures never overwrite existing data
+
+  </td>
+    <td width="50%" valign="top">
+
+### AI Coaching
+
+![OpenAI](https://img.shields.io/badge/GPT--4o-Engine-412991?style=flat-square&labelColor=0d1117)
+
+- **Per-Match Analysis** — Structured GPT prompt with hero, KDA, GPM, items, timing, laning role, net worth
+- **Conversational Context** — Follow-up questions retain full match context in unified chat interface
+- **Historical Baseline** — AI contextualizes individual match vs. lifetime hero performance
+- **No Fragmented UI** — Single scrollable conversation, no nested panels, no internal scrollbars
+
+  </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+### Analytics & Visualization
+
+![Recharts](https://img.shields.io/badge/Recharts-Charts-22b5bf?style=flat-square&labelColor=0d1117)
+
+- **Drill-down Trend Charts** — GPM, KDA, XPM, Last Hits, Hero Damage across last 30 matches
+- **Clickable Data Points** — Chart nodes navigate directly to full match detail view
+- **Smart Rank Mapping** — Rank tier integers decoded to Herald–Immortal with MMR range estimates
+- **Lifetime W/L Block** — Wins / Losses / Winrate displayed like OpenDota's header, always accurate
+
+  </td>
+    <td width="50%" valign="top">
+
+### Design System
+
+![Dark Mode](https://img.shields.io/badge/Dark--Mode-Only-0d1117?style=flat-square&labelColor=111827&color=00e5ff)
+
+- **Architectural Minimalism** — No decorative gradients, no emoji, every element earns its place
+- **Custom CSS Design System** — Tokens, utilities, and components in Vanilla CSS — no Tailwind
+- **Micro-interactions** — Hover states, chart animations, status pulse dots
+- **Responsive Layout** — Grid system adapts from wide dashboard to compact mobile view
+
+  </td>
+  </tr>
+</table>
 
 ---
 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                     Frontend                        │
-│   Next.js 15  ·  TypeScript  ·  Vanilla CSS         │
-│   Recharts  ·  React Markdown  ·  remark-gfm        │
-└────────────────────┬────────────────────────────────┘
-                     │ REST API
-┌────────────────────▼────────────────────────────────┐
-│                     Backend                         │
-│   Django 5  ·  Django REST Framework                │
-│   Celery  ·  Redis (broker)  ·  PostgreSQL          │
-└────────────┬────────────────────┬───────────────────┘
-             │                    │
-┌────────────▼─────────┐ ┌───────▼────────────────────┐
-│   OpenDota API       │ │   AI Engine                │
-│   /players/{id}      │ │   OpenAI GPT-4o            │
-│   /players/{id}/wl   │ │   Structured match prompts │
-│   /players/{id}/heroes│ │   Conversational context  │
-│   /matches/{id}      │ └────────────────────────────┘
-└──────────────────────┘
+ Client Browser
+       |
+       | HTTPS
+       v
+ ┌─────────────────────────────────────────┐
+ │            Next.js 15                   │
+ │   App Router  ·  TypeScript  ·  CSS     │
+ │   Recharts  ·  ReactMarkdown            │
+ └────────────────────┬────────────────────┘
+                      │ REST / JSON
+                      v
+ ┌─────────────────────────────────────────┐
+ │        Django 5  +  DRF                 │
+ │                                         │
+ │  /api/v1/profile/   /api/v1/dashboard/  │
+ │  /api/v1/coach/     /api/v1/heroes/     │
+ └──────┬─────────────────────┬────────────┘
+        │                     │
+        v                     v
+ ┌──────────────┐    ┌────────────────────┐
+ │  PostgreSQL  │    │  Celery  +  Redis  │
+ │              │    │                    │
+ │  Player      │    │  sync_player_data  │
+ │  Match       │    │  _sync_profile     │
+ │  PlayerMatch │    │  _sync_matches     │
+ │  HeroStats   │    │  _update_hero_stats│
+ └──────────────┘    └────────┬───────────┘
+                              │
+               ┌──────────────┴──────────────┐
+               │                             │
+               v                             v
+ ┌─────────────────────┐        ┌────────────────────────┐
+ │   OpenDota API      │        │    OpenAI GPT-4o       │
+ │                     │        │                        │
+ │  /players/{id}      │        │  Match analysis prompt │
+ │  /players/{id}/wl   │        │  Conversational chat   │
+ │  /players/{id}/heroes│        │  Item timing context  │
+ │  /matches/{id}      │        └────────────────────────┘
+ └─────────────────────┘
 ```
 
 ### Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend Framework | Next.js 15 (App Router) |
-| Language | TypeScript |
-| Styling | Vanilla CSS (custom design system) |
-| Charts | Recharts |
-| Backend Framework | Django 5 + Django REST Framework |
-| Task Queue | Celery + Redis |
-| Database | PostgreSQL |
-| Data Source | OpenDota API (free, no key required) |
-| AI Engine | OpenAI GPT-4o |
-| Deployment-ready | Docker-composable |
+| Layer | Technology | Purpose |
+|:---|:---|:---|
+| ![Next.js](https://img.shields.io/badge/-Next.js-black?logo=next.js&style=flat-square) | Next.js 15 (App Router) | Frontend framework, SSR, routing |
+| ![TS](https://img.shields.io/badge/-TypeScript-3178c6?logo=typescript&logoColor=white&style=flat-square) | TypeScript | Type safety across all frontend code |
+| ![CSS](https://img.shields.io/badge/-Vanilla_CSS-1572B6?logo=css3&logoColor=white&style=flat-square) | Vanilla CSS | Custom design system, no Tailwind |
+| ![Recharts](https://img.shields.io/badge/-Recharts-22b5bf?style=flat-square) | Recharts | Interactive performance charts |
+| ![Django](https://img.shields.io/badge/-Django-092e20?logo=django&logoColor=white&style=flat-square) | Django 5 + DRF | REST API, ORM, serializers |
+| ![Celery](https://img.shields.io/badge/-Celery-37814a?logo=celery&logoColor=white&style=flat-square) | Celery + Redis | Async sync pipeline, background tasks |
+| ![PG](https://img.shields.io/badge/-PostgreSQL-4169e1?logo=postgresql&logoColor=white&style=flat-square) | PostgreSQL | Primary datastore |
+| ![OD](https://img.shields.io/badge/-OpenDota_API-ff6f00?style=flat-square) | OpenDota API | Free Dota 2 stats, no key needed |
+| ![OAI](https://img.shields.io/badge/-OpenAI-412991?logo=openai&logoColor=white&style=flat-square) | GPT-4o | Match analysis and coaching engine |
 
 ---
 
@@ -133,65 +192,60 @@
 
 ### Prerequisites
 
-- Python 3.12+
-- Node.js 20+
-- PostgreSQL
-- Redis
-- OpenAI API Key
+![Python](https://img.shields.io/badge/Python-3.12+-3776ab?style=flat-square&logo=python&logoColor=white)
+![Node](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white)
+![PG](https://img.shields.io/badge/PostgreSQL-required-4169e1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-required-dc382d?style=flat-square&logo=redis&logoColor=white)
+![OAI](https://img.shields.io/badge/OpenAI-API_Key-412991?style=flat-square&logo=openai&logoColor=white)
 
-### 1. Clone the repository
+### 1. Clone
 
 ```bash
 git clone https://github.com/Ataniyaz228/dota2-ai-coach.git
 cd dota2-ai-coach
 ```
 
-### 2. Backend setup
+### 2. Backend
 
 ```bash
 cd backend
 python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux / macOS
+
+# Windows
+venv\Scripts\activate
+# Linux / macOS
+# source venv/bin/activate
 
 pip install -r requirements.txt
-```
-
-Copy the environment file and fill in your values:
-
-```bash
 cp .env.example .env
 ```
 
+Edit `.env`:
+
 ```env
-DATABASE_URL=postgres://user:password@localhost:5432/dota2coach
+DATABASE_URL=postgres://user:password@localhost:5432/aegis
 REDIS_URL=redis://localhost:6379/0
 OPENAI_API_KEY=sk-...
 SECRET_KEY=your-django-secret-key
 DEBUG=True
 ```
 
-Apply migrations and start the server:
-
 ```bash
 python manage.py migrate
 python manage.py runserver
 ```
 
-Start the background worker (separate terminal):
+Start background worker (separate terminal):
 
 ```bash
 celery -A config worker -l info --pool=solo
 ```
 
-### 3. Frontend setup
+### 3. Frontend
 
 ```bash
 cd frontend
 npm install
-```
-
-```bash
 cp .env.local.example .env.local
 ```
 
@@ -203,53 +257,59 @@ NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
 npm run dev
 ```
 
-> The frontend will be available at `http://localhost:3000`. Enter any public Dota 2 account ID on the landing page to begin synchronization.
+> Platform available at `http://localhost:3000`  
+> Enter any **public** Dota 2 Account ID on the landing page to trigger synchronization.
 
 ---
 
 ## Data Flow
 
 ```
-User enters Account ID
-        |
-        v
-POST /api/v1/profile/link
-        |
-        v
-Celery task: sync_player_data(account_id)
-  |
-  |-- _sync_profile()     -> /players/{id}  + /players/{id}/wl
-  |-- _sync_matches()     -> /players/{id}/matches + /matches/{id} (last 20 detail)
-  |-- _update_hero_stats() -> /players/{id}/heroes  [with retry + rate-limit guard]
-        |
-        v
-PostgreSQL: Player, Match, PlayerMatch, PlayerHeroStats
-        |
-        v
-Dashboard API serves merged lifetime + recent data
+ User enters Account ID
+          |
+          v
+ POST /api/v1/profile/link
+          |
+          v
+ Celery: sync_player_data(account_id)
+    |
+    |─── _sync_profile()
+    |         OpenDota: /players/{id}
+    |         OpenDota: /players/{id}/wl  (lifetime W/L)
+    |
+    |─── _sync_matches()
+    |         OpenDota: /players/{id}/matches  (list)
+    |         OpenDota: /matches/{id}           (detail × last 20)
+    |             -> kills, items, purchase_log, timelines
+    |
+    |─── _update_hero_stats()
+              OpenDota: /players/{id}/heroes   [retry × 2, 3s backoff]
+              Merge: global games/wins + local avg KDA/GPM/XPM
+              Write: PlayerHeroStats (upsert)
+                         |
+                         v
+              PostgreSQL committed
+                         |
+                         v
+              Dashboard API: merged lifetime + recent data
 ```
 
 ---
 
 ## Architectural Notes
 
-> **On data storage strategy:** Only the 20 most recent matches are stored with full detail (purchase logs, timelines, ability upgrades). Global hero statistics (career games, wins) are fetched from OpenDota's aggregated endpoint and stored as a flat summary. This avoids unbounded database growth while preserving analytical accuracy.
+> **Hybrid Storage:** Full match telemetry (purchase logs, timelines, ability upgrades) is stored for the 20 most recent matches only. Global hero stats (career games, wins) are fetched from OpenDota's aggregated endpoint as a flat summary. This prevents unbounded DB growth while preserving analytical accuracy.
 
-> **On rate limiting:** OpenDota enforces soft rate limits on free-tier API access. The sync pipeline introduces deliberate delays between match detail requests and implements a 2-attempt retry with a 3-second backoff specifically for the `/heroes` endpoint, which is called last in the pipeline and most susceptible to exhausted quotas.
+> **Rate Limit Resilience:** The `/heroes` endpoint is called last in the sync pipeline, after 20+ match detail requests. A 2-attempt retry with 3-second backoff is applied. If both fail, the function exits cleanly — existing hero stats are **never overwritten** with degraded data.
 
-> **On AI context:** The GPT prompt receives structured match data including: hero, KDA, GPM, XPM, item build with purchase timings (where available), laning role, net worth, gold advantage timeline, and the player's lifetime hero statistics. This allows the model to contextualize individual match performance against historical baselines.
-
----
-
-## License
-
-MIT License. See [LICENSE](./LICENSE) for details.
+> **AI Prompt Scope:** The GPT context includes: hero, KDA, GPM, XPM, item build with purchase timings, laning role, net worth, gold advantage timeline, and lifetime hero stats. This allows the model to contextualize each match against the player's historical baseline.
 
 ---
 
 <div align="center">
 
-Built with precision. No filler, no fluff.
+![Made with precision](https://img.shields.io/badge/Made_with-Precision-00e5ff?style=for-the-badge&labelColor=0d1117)
+![No fluff](https://img.shields.io/badge/No-Fluff-0d1117?style=for-the-badge&labelColor=0d1117&color=ff5252)
 
 </div>
 
@@ -262,129 +322,187 @@ Built with precision. No filler, no fluff.
 
 <div align="center">
 
-```
-  ____        _        ____                 _       _    ___
- |  _ \  ___ | |_ /\  / ___|___   __ _  __| |_    / \  |_ _|
- | | | |/ _ \| __/  \| |   / _ \ / _` |/ _` \ \  / _ \  | |
- | |_| | (_) | || /\ | |__| (_) | (_| | (_| |\ \/ / ___ \ | |
- |____/ \___/ \__\/  \\____\___/ \__,_|\__,_| \__/_/   \_\___|
-```
+<img src="./docs/logo.png" alt="Aegis.AI" width="480" />
 
-**DotACoach.AI**
+<br/>
 
-*Каждый матч — источник конкретных действий.*
+![Сборка](https://img.shields.io/badge/сборка-успешна-00c853?style=for-the-badge&labelColor=0d1117&logo=github-actions&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-15-white?style=for-the-badge&logo=next.js&labelColor=0d1117)
+![Django](https://img.shields.io/badge/Django-5-092e20?style=for-the-badge&logo=django&labelColor=0d1117&color=092e20)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169e1?style=for-the-badge&logo=postgresql&labelColor=0d1117&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-Celery-dc382d?style=for-the-badge&logo=redis&labelColor=0d1117&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=for-the-badge&logo=openai&labelColor=0d1117&logoColor=white)
+![Лицензия](https://img.shields.io/badge/Лицензия-MIT-00e5ff?style=for-the-badge&labelColor=0d1117)
 
----
+<br/>
 
-![Build Status](https://img.shields.io/badge/сборка-успешна-brightgreen?style=flat-square&labelColor=0d1117&color=00c853)
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js&labelColor=0d1117)
-![Django](https://img.shields.io/badge/Django-5.x-092e20?style=flat-square&logo=django&labelColor=0d1117&color=092e20)
-![Python](https://img.shields.io/badge/Python-3.12-3776ab?style=flat-square&logo=python&labelColor=0d1117)
-![OpenDota](https://img.shields.io/badge/OpenDota-API-ff6f00?style=flat-square&labelColor=0d1117)
-![License](https://img.shields.io/badge/лицензия-MIT-blue?style=flat-square&labelColor=0d1117)
+**Aegis.AI** — полностековая платформа интеллектуального анализа для игроков в Dota 2.  
+Превращает сырые данные матчей в структурированный, GPT-анализ с ранговыми метриками, визуализацией и хирургической точностью.
 
-</div>
+<br/>
 
----
-
-## Демонстрация
-
-<div align="center">
-
-<!-- PLACEHOLDER: Замените на реальный GIF или ссылку на видео -->
-<!-- <img src="./docs/demo.gif" alt="Демо дашборда DotACoach.AI" width="100%" /> -->
-
-> Демо-видео / GIF будет размещено здесь.
-> Рекомендуемый контент: обзор дашборда -> детализация трендов -> анализ матча через AI Coach.
+[![Смотреть демо](https://img.shields.io/badge/-Смотреть_демо-0d1117?style=for-the-badge&logo=youtube&logoColor=00e5ff&labelColor=0d1117)](https://github.com/Ataniyaz228/dota2-ai-coach)
+[![Сообщить о баге](https://img.shields.io/badge/-Сообщить_об_ошибке-0d1117?style=for-the-badge&logo=github&logoColor=ff5252&labelColor=0d1117)](https://github.com/Ataniyaz228/dota2-ai-coach/issues)
+[![Звезда](https://img.shields.io/github/stars/Ataniyaz228/dota2-ai-coach?style=for-the-badge&logo=github&labelColor=0d1117&color=ffd700)](https://github.com/Ataniyaz228/dota2-ai-coach)
 
 </div>
 
 ---
 
-## Интерфейс
+## Демо и скриншоты
 
 <div align="center">
+
+<!-- PLACEHOLDER: Замените на реальный GIF -->
+<!-- <img src="./docs/demo.gif" alt="Демо платформы Aegis.AI" width="100%" /> -->
+
+> **[Demo GIF / Video]** — Обзор дашборда, детализация трендов, AI-анализ матча.
+
+<br/>
+
 <table>
   <tr>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Скриншот 1 — Главная страница / ввод аккаунта -->
-      <!-- <img src="./docs/screenshots/landing.png" alt="Главная страница" /> -->
-      <strong>Главная — Ввод аккаунта</strong>
+    <td align="center">
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Главная+страница" />
+      <br/><sub><b>Ввод аккаунта</b></sub>
     </td>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Скриншот 2 — Обзор дашборда -->
-      <!-- <img src="./docs/screenshots/dashboard.png" alt="Дашборд" /> -->
-      <strong>Дашборд — Общая статистика</strong>
+    <td align="center">
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Дашборд" />
+      <br/><sub><b>Общая статистика</b></sub>
     </td>
   </tr>
   <tr>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Скриншот 3 — Тренды и детализация -->
-      <!-- <img src="./docs/screenshots/trends.png" alt="Графики трендов" /> -->
-      <strong>Тренды — KDA / GPM по матчам</strong>
+    <td align="center">
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Тренды" />
+      <br/><sub><b>Аналитика трендов</b></sub>
     </td>
-    <td align="center" width="50%">
-      <!-- PLACEHOLDER: Скриншот 4 — AI Coach, анализ матча -->
-      <!-- <img src="./docs/screenshots/ai-coach.png" alt="AI Coach" /> -->
-      <strong>AI Coach — Анализ отдельного матча</strong>
+    <td align="center">
+      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=AI+Coach" />
+      <br/><sub><b>AI Coach — Анализ матча</b></sub>
     </td>
   </tr>
 </table>
+
 </div>
 
 ---
 
 ## Ключевые возможности
 
-- **Статистика героев за всё время** — Глобальные данные о победах и поражениях берутся из эндпоинта `/heroes` OpenDota, а не только из локально сохранённых матчей. Всегда отражает реальную карьерную статистику.
-- **Гибридная архитектура данных** — Детальное телеметрие матча (предметы, таймлайны, логи покупок) хранится локально только для 20 последних матчей. Глобальные агрегаты запрашиваются в режиме реального времени — хранилище остаётся компактным, точность не страдает.
-- **AI Coach** — Анализ каждого матча через GPT-4o в едином интерфейсе чата. Уточняющие вопросы сохраняют полный контекст матча. Никаких разрозненных панелей, никаких вложенных полос прокрутки.
-- **Тайминги покупки предметов** — Там, где есть данные реплея, значимые покупки предметов отмечены временными метками прямо в детализации матча и контексте AI-промпта.
-- **Drill-down аналитика трендов** — Интерактивные графики производительности (GPM, KDA, XPM, Last Hits, урон по строениям) по последним 30 матчам игрока. Точки на графике кликабельны и ведут к полной детализации матча.
-- **Умная расшифровка ранга** — Числовые значения rank_tier декодируются в читаемые ранги (от Herald 1 до Immortal) с расчётом диапазона MMR по данным игры.
-- **Устойчивый конвейер синхронизации** — Фоновый воркер Celery с логикой повторных попыток при обращении к API OpenDota. Ошибки rate-limit не перезаписывают существующие данные — воркер корректно завершает работу, сохраняя текущее состояние.
-- **Строгий тёмный интерфейс** — Архитектурный минималистичный дизайн. Никаких декоративных градиентов, никаких эмодзи, никакой "пузырчатой" AI-эстетики. Каждый элемент оправдывает своё присутствие.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+### Анализ данных
+
+![OpenDota](https://img.shields.io/badge/OpenDota-Powered-ff6f00?style=flat-square&labelColor=0d1117)
+
+- **Статистика героев за всю карьеру** — Реальные данные из `/heroes` OpenDota, не только локальные матчи
+- **Гибридный пайплайн** — Полная телеметрия только для 20 последних матчей; глобальные агрегаты в реальном времени
+- **Тайминги предметов** — Временные метки покупок из данных реплея в UI и AI-промптах
+- **Устойчивая синхронизация** — Celery с 2 попытками и 3-секундным ожиданием; сбои не перезаписывают данные
+
+  </td>
+    <td width="50%" valign="top">
+
+### AI-коучинг
+
+![OpenAI](https://img.shields.io/badge/GPT--4o-Engine-412991?style=flat-square&labelColor=0d1117)
+
+- **Анализ каждого матча** — Структурированный промпт: герой, KDA, GPM, предметы, тайминги, роль, нетворс
+- **Разговорный контекст** — Уточняющие вопросы сохраняют контекст матча в едином чате
+- **Исторический базис** — AI сравнивает матч с карьерной статистикой героя
+- **Без фрагментации UI** — Один скроллируемый чат, нет вложенных панелей или скроллбаров
+
+  </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+### Визуализация
+
+![Recharts](https://img.shields.io/badge/Recharts-Charts-22b5bf?style=flat-square&labelColor=0d1117)
+
+- **Drill-down графики** — GPM, KDA, XPM, Last Hits, урон по строениям за 30 матчей
+- **Кликабельные точки** — Переход на детализацию матча прямо из графика
+- **Умная расшифровка ранга** — От Herald 1 до Immortal с диапазоном MMR
+- **Блок побед/поражений** — Как в OpenDota: Победы / Поражения / Доля побед, всегда актуально
+
+  </td>
+    <td width="50%" valign="top">
+
+### Дизайн-система
+
+![Dark Mode](https://img.shields.io/badge/Dark--Mode-Only-0d1117?style=flat-square&labelColor=111827&color=00e5ff)
+
+- **Архитектурный минимализм** — Нет декоративных градиентов, нет эмодзи, каждый элемент оправдан
+- **Vanilla CSS** — Собственная дизайн-система с токенами и утилитами, без Tailwind
+- **Микро-анимации** — Hover-эффекты, анимации графиков, пульсирующие точки статуса
+- **Адаптивный лейаут** — Grid-система от широкого дашборда до мобильного вида
+
+  </td>
+  </tr>
+</table>
 
 ---
 
 ## Архитектура
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                     Фронтенд                        │
-│   Next.js 15  ·  TypeScript  ·  Vanilla CSS         │
-│   Recharts  ·  React Markdown  ·  remark-gfm        │
-└────────────────────┬────────────────────────────────┘
-                     │ REST API
-┌────────────────────▼────────────────────────────────┐
-│                     Бэкенд                          │
-│   Django 5  ·  Django REST Framework                │
-│   Celery  ·  Redis (брокер)  ·  PostgreSQL          │
-└────────────┬────────────────────┬───────────────────┘
-             │                    │
-┌────────────▼─────────┐ ┌───────▼────────────────────┐
-│   OpenDota API       │ │   AI-движок                │
-│   /players/{id}      │ │   OpenAI GPT-4o            │
-│   /players/{id}/wl   │ │   Структурированные промпты│
-│   /players/{id}/heroes│ │   Контекст разговора      │
-│   /matches/{id}      │ └────────────────────────────┘
-└──────────────────────┘
+ Браузер клиента
+       |
+       | HTTPS
+       v
+ ┌─────────────────────────────────────────┐
+ │            Next.js 15                   │
+ │   App Router  ·  TypeScript  ·  CSS     │
+ │   Recharts  ·  ReactMarkdown            │
+ └────────────────────┬────────────────────┘
+                      │ REST / JSON
+                      v
+ ┌─────────────────────────────────────────┐
+ │        Django 5  +  DRF                 │
+ │                                         │
+ │  /api/v1/profile/   /api/v1/dashboard/  │
+ │  /api/v1/coach/     /api/v1/heroes/     │
+ └──────┬─────────────────────┬────────────┘
+        │                     │
+        v                     v
+ ┌──────────────┐    ┌────────────────────┐
+ │  PostgreSQL  │    │  Celery  +  Redis  │
+ │              │    │                    │
+ │  Player      │    │  sync_player_data  │
+ │  Match       │    │  _sync_profile     │
+ │  PlayerMatch │    │  _sync_matches     │
+ │  HeroStats   │    │  _update_hero_stats│
+ └──────────────┘    └────────┬───────────┘
+                              │
+               ┌──────────────┴──────────────┐
+               │                             │
+               v                             v
+ ┌─────────────────────┐        ┌────────────────────────┐
+ │   OpenDota API      │        │    OpenAI GPT-4o       │
+ │                     │        │                        │
+ │  /players/{id}      │        │  Структурированный     │
+ │  /players/{id}/wl   │        │  промпт матча          │
+ │  /players/{id}/heroes│        │  Контекст разговора   │
+ │  /matches/{id}      │        └────────────────────────┘
+ └─────────────────────┘
 ```
 
 ### Стек технологий
 
-| Слой | Технология |
-|---|---|
-| Фреймворк фронтенда | Next.js 15 (App Router) |
-| Язык | TypeScript |
-| Стилизация | Vanilla CSS (собственная дизайн-система) |
-| Графики | Recharts |
-| Фреймворк бэкенда | Django 5 + Django REST Framework |
-| Очередь задач | Celery + Redis |
-| База данных | PostgreSQL |
-| Источник данных | OpenDota API (бесплатно, ключ не нужен) |
-| AI-движок | OpenAI GPT-4o |
-| Готов к развёртыванию | Docker-composable |
+| Слой | Технология | Назначение |
+|:---|:---|:---|
+| ![Next.js](https://img.shields.io/badge/-Next.js-black?logo=next.js&style=flat-square) | Next.js 15 | Фронтенд, SSR, маршрутизация |
+| ![TS](https://img.shields.io/badge/-TypeScript-3178c6?logo=typescript&logoColor=white&style=flat-square) | TypeScript | Типизация фронтенда |
+| ![CSS](https://img.shields.io/badge/-Vanilla_CSS-1572B6?logo=css3&logoColor=white&style=flat-square) | Vanilla CSS | Дизайн-система без Tailwind |
+| ![Recharts](https://img.shields.io/badge/-Recharts-22b5bf?style=flat-square) | Recharts | Интерактивные графики |
+| ![Django](https://img.shields.io/badge/-Django-092e20?logo=django&logoColor=white&style=flat-square) | Django 5 + DRF | REST API, ORM, сериализаторы |
+| ![Celery](https://img.shields.io/badge/-Celery-37814a?logo=celery&logoColor=white&style=flat-square) | Celery + Redis | Асинхронный пайплайн синхронизации |
+| ![PG](https://img.shields.io/badge/-PostgreSQL-4169e1?logo=postgresql&logoColor=white&style=flat-square) | PostgreSQL | Основное хранилище |
+| ![OD](https://img.shields.io/badge/-OpenDota_API-ff6f00?style=flat-square) | OpenDota API | Данные Dota 2, ключ не нужен |
+| ![OAI](https://img.shields.io/badge/-OpenAI-412991?logo=openai&logoColor=white&style=flat-square) | GPT-4o | Движок анализа и коучинга |
 
 ---
 
@@ -392,65 +510,60 @@ Built with precision. No filler, no fluff.
 
 ### Требования
 
-- Python 3.12+
-- Node.js 20+
-- PostgreSQL
-- Redis
-- Ключ API OpenAI
+![Python](https://img.shields.io/badge/Python-3.12+-3776ab?style=flat-square&logo=python&logoColor=white)
+![Node](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white)
+![PG](https://img.shields.io/badge/PostgreSQL-обязательно-4169e1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-обязательно-dc382d?style=flat-square&logo=redis&logoColor=white)
+![OAI](https://img.shields.io/badge/OpenAI-API_ключ-412991?style=flat-square&logo=openai&logoColor=white)
 
-### 1. Клонируйте репозиторий
+### 1. Клонирование
 
 ```bash
 git clone https://github.com/Ataniyaz228/dota2-ai-coach.git
 cd dota2-ai-coach
 ```
 
-### 2. Настройка бэкенда
+### 2. Бэкенд
 
 ```bash
 cd backend
 python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux / macOS
+
+# Windows
+venv\Scripts\activate
+# Linux / macOS
+# source venv/bin/activate
 
 pip install -r requirements.txt
-```
-
-Скопируйте файл окружения и заполните значения:
-
-```bash
 cp .env.example .env
 ```
 
+Заполните `.env`:
+
 ```env
-DATABASE_URL=postgres://user:password@localhost:5432/dota2coach
+DATABASE_URL=postgres://user:password@localhost:5432/aegis
 REDIS_URL=redis://localhost:6379/0
 OPENAI_API_KEY=sk-...
 SECRET_KEY=ваш-django-секретный-ключ
 DEBUG=True
 ```
 
-Примените миграции и запустите сервер:
-
 ```bash
 python manage.py migrate
 python manage.py runserver
 ```
 
-Запустите фоновый воркер (отдельный терминал):
+Воркер (отдельный терминал):
 
 ```bash
 celery -A config worker -l info --pool=solo
 ```
 
-### 3. Настройка фронтенда
+### 3. Фронтенд
 
 ```bash
 cd frontend
 npm install
-```
-
-```bash
 cp .env.local.example .env.local
 ```
 
@@ -462,52 +575,30 @@ NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
 npm run dev
 ```
 
-> Фронтенд будет доступен по адресу `http://localhost:3000`. Введите любой публичный ID аккаунта Dota 2 на главной странице, чтобы начать синхронизацию.
-
----
-
-## Поток данных
-
-```
-Пользователь вводит Account ID
-        |
-        v
-POST /api/v1/profile/link
-        |
-        v
-Celery-задача: sync_player_data(account_id)
-  |
-  |-- _sync_profile()     -> /players/{id}  + /players/{id}/wl
-  |-- _sync_matches()     -> /players/{id}/matches + /matches/{id} (детализация последних 20)
-  |-- _update_hero_stats() -> /players/{id}/heroes  [с retry + защитой от rate-limit]
-        |
-        v
-PostgreSQL: Player, Match, PlayerMatch, PlayerHeroStats
-        |
-        v
-Dashboard API предоставляет объединённые данные (Lifetime + Recent)
-```
+> Платформа доступна по адресу `http://localhost:3000`  
+> Введите любой **публичный** Account ID Dota 2 на главной странице для запуска синхронизации.
 
 ---
 
 ## Архитектурные примечания
 
-> **О стратегии хранения данных:** Только 20 последних матчей хранятся с полной детализацией (логи покупок, таймлайны, улучшения способностей). Глобальная статистика героев (карьерные игры, победы) запрашивается из агрегированного эндпоинта OpenDota и хранится в виде плоской сводки. Это исключает неограниченный рост базы данных, сохраняя аналитическую точность.
+> **Гибридное хранение:** Полная телеметрия матча (логи покупок, таймлайны, улучшения способностей) сохраняется только для 20 последних матчей. Глобальная статистика героев запрашивается из агрегированного эндпоинта OpenDota. Это исключает неограниченный рост базы данных без потери аналитической точности.
 
-> **О rate-ограничениях:** OpenDota применяет мягкие ограничения скорости для бесплатного доступа к API. Конвейер синхронизации вводит намеренные задержки между запросами деталей матча и реализует 2 попытки с ожиданием 3 секунды специально для эндпоинта `/heroes`, который вызывается последним в пайплайне и наиболее уязвим к исчерпанию квоты.
+> **Устойчивость к rate-limit:** Эндпоинт `/heroes` вызывается последним в пайплайне, после 20+ запросов деталей матча. Применяется 2 попытки с ожиданием 3 секунды. При неудаче функция завершается корректно — существующие данные героев **никогда не перезаписываются** деградированными.
 
-> **О контексте AI:** GPT-промпт получает структурированные данные матча: герой, KDA, GPM, XPM, сборка предметов с таймингами покупок (где доступно), роль на лайне, чистая стоимость, таймлайн золотого преимущества и пожизненная статистика героев игрока. Это позволяет модели контекстуализировать производительность в отдельном матче относительно исторических базовых показателей.
+> **Контекст AI-промпта:** GPT получает: герой, KDA, GPM, XPM, сборка предметов с таймингами, роль на лайне, нетворс, таймлайн золотого преимущества и пожизненная статистика героя. Это позволяет модели соотнести производительность в матче с историческим базисом игрока.
 
 ---
 
 ## Лицензия
 
-Лицензия MIT. Подробности в файле [LICENSE](./LICENSE).
+MIT License. Подробности в файле [LICENSE](./LICENSE).
 
 ---
 
 <div align="center">
 
-Построено с точностью. Без лишнего.
+![Made with precision](https://img.shields.io/badge/Сделано_с-точностью-00e5ff?style=for-the-badge&labelColor=0d1117)
+![No fluff](https://img.shields.io/badge/Без-лишнего-0d1117?style=for-the-badge&labelColor=0d1117&color=ff5252)
 
 </div>
