@@ -43,25 +43,21 @@ It transforms raw match telemetry into structured, Gemini-powered coaching — r
 <table>
   <tr>
     <td align="center">
-      <!-- PLACEHOLDER: <img src="./docs/screenshots/landing.png" width="100%" /> -->
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Landing+Page" />
+      <img src="./docs/screenshots/landing_page.jpg" alt="Aegis.AI Landing Page" />
       <br/><sub><b>Account Input Terminal</b></sub>
     </td>
     <td align="center">
-      <!-- PLACEHOLDER: <img src="./docs/screenshots/dashboard.png" width="100%" /> -->
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Dashboard+Overview" />
+      <img src="./docs/screenshots/dashboard.jpg" alt="Aegis.AI Dashboard" />
       <br/><sub><b>Performance Dashboard</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <!-- PLACEHOLDER: <img src="./docs/screenshots/trends.png" width="100%" /> -->
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Trend+Charts" />
+      <img src="./docs/screenshots/trends.png" alt="Aegis.AI Analytics Trends" />
       <br/><sub><b>Drill-down Trend Analytics</b></sub>
     </td>
     <td align="center">
-      <!-- PLACEHOLDER: <img src="./docs/screenshots/ai-coach.png" width="100%" /> -->
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=AI+Coach" />
+      <img src="./docs/screenshots/ai_coach.jpg" alt="Aegis.AI Coach analysis" />
       <br/><sub><b>AI Coach — Match Analysis</b></sub>
     </td>
   </tr>
@@ -369,21 +365,21 @@ npm run dev
 <table>
   <tr>
     <td align="center">
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Главная+страница" />
+      <img src="./docs/screenshots/landing_page.jpg" alt="Aegis.AI Landing Page — RU" />
       <br/><sub><b>Ввод аккаунта</b></sub>
     </td>
     <td align="center">
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Дашборд" />
+      <img src="./docs/screenshots/dashboard.jpg" alt="Aegis.AI Dashboard — RU" />
       <br/><sub><b>Общая статистика</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=Тренды" />
+      <img src="./docs/screenshots/trends.png" alt="Aegis.AI Trends — RU" />
       <br/><sub><b>Аналитика трендов</b></sub>
     </td>
     <td align="center">
-      <img width="400" height="220" src="https://placehold.co/400x220/0d1117/00e5ff?text=AI+Coach" />
+      <img src="./docs/screenshots/ai_coach.jpg" alt="Aegis.AI Coach — RU" />
       <br/><sub><b>AI Coach — Анализ матча</b></sub>
     </td>
   </tr>
