@@ -1,7 +1,7 @@
 <div align="center">
 
 <table><tr><td align="center" bgcolor="#0d1117" style="padding:24px;border-radius:12px;">
-<img src="./docs/logo.png" alt="Aegis.AI" width="360" />
+<img src="./docs/logo.svg" alt="Aegis.AI" width="300" />
 </td></tr></table>
 
 <br/>
@@ -323,7 +323,7 @@ npm run dev
 <div align="center">
 
 <table><tr><td align="center" bgcolor="#0d1117" style="padding:24px;border-radius:12px;">
-<img src="./docs/logo.png" alt="Aegis.AI" width="360" />
+<img src="./docs/logo.svg" alt="Aegis.AI" width="300" />
 </td></tr></table>
 
 <br/>

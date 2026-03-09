@@ -17,7 +17,7 @@ export default function RootLayout({
         <nav className="navbar">
           <div className="navbar-inner">
             <a href="/" className="navbar-brand">
-              <span className="logo-icon">AE</span>
+              <img src="/logo.svg" alt="Aegis.ai Logo" className="navbar-logo-img" style={{ width: 28, height: 28, objectFit: 'contain' }} />
               <span>Aegis.ai</span>
             </a>
             <div className="navbar-links">
