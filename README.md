@@ -1,7 +1,7 @@
 <div align="center">
 
 <table><tr><td align="center" bgcolor="#0d1117" style="padding:24px;border-radius:12px;">
-<img src="./docs/logo.png" alt="Aegis.AI" width="420" />
+<img src="./docs/logo.png" alt="Aegis.AI" width="360" />
 </td></tr></table>
 
 <br/>
@@ -11,13 +11,13 @@
 ![Django](https://img.shields.io/badge/Django-5-092e20?style=for-the-badge&logo=django&labelColor=0d1117&color=092e20)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169e1?style=for-the-badge&logo=postgresql&labelColor=0d1117&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-Celery-dc382d?style=for-the-badge&logo=redis&labelColor=0d1117&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=for-the-badge&logo=openai&labelColor=0d1117&logoColor=white)
+![Gemini](https://img.shields.io/badge/Google-Gemini-4285f4?style=for-the-badge&logo=google&labelColor=0d1117&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-00e5ff?style=for-the-badge&labelColor=0d1117)
 
 <br/>
 
 **Aegis.AI** is a full-stack intelligence platform for Dota 2 players.  
-It transforms raw match telemetry into structured, GPT-powered coaching — ranked, visual, and brutal in precision.
+It transforms raw match telemetry into structured, Gemini-powered coaching — ranked, visual, and brutal in precision.
 
 <br/>
 
@@ -91,7 +91,7 @@ It transforms raw match telemetry into structured, GPT-powered coaching — rank
 
 ### AI Coaching
 
-![OpenAI](https://img.shields.io/badge/GPT--4o-Engine-412991?style=flat-square&labelColor=0d1117)
+![Gemini](https://img.shields.io/badge/Gemini-Engine-4285f4?style=flat-square&logo=google&labelColor=0d1117&logoColor=white)
 
 - **Per-Match Analysis** — Structured Gemini prompt with hero, KDA, GPM, items, timing, laning role, net worth
 - **Conversational Context** — Follow-up questions retain full match context in unified chat interface
@@ -327,7 +327,7 @@ npm run dev
 <div align="center">
 
 <table><tr><td align="center" bgcolor="#0d1117" style="padding:24px;border-radius:12px;">
-<img src="./docs/logo.png" alt="Aegis.AI" width="420" />
+<img src="./docs/logo.png" alt="Aegis.AI" width="360" />
 </td></tr></table>
 
 <br/>
@@ -337,13 +337,13 @@ npm run dev
 ![Django](https://img.shields.io/badge/Django-5-092e20?style=for-the-badge&logo=django&labelColor=0d1117&color=092e20)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169e1?style=for-the-badge&logo=postgresql&labelColor=0d1117&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-Celery-dc382d?style=for-the-badge&logo=redis&labelColor=0d1117&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=for-the-badge&logo=openai&labelColor=0d1117&logoColor=white)
+![Gemini](https://img.shields.io/badge/Google-Gemini-4285f4?style=for-the-badge&logo=google&labelColor=0d1117&logoColor=white)
 ![Лицензия](https://img.shields.io/badge/Лицензия-MIT-00e5ff?style=for-the-badge&labelColor=0d1117)
 
 <br/>
 
 **Aegis.AI** — полностековая платформа интеллектуального анализа для игроков в Dota 2.  
-Превращает сырые данные матчей в структурированный, GPT-анализ с ранговыми метриками, визуализацией и хирургической точностью.
+Превращает сырые данные матчей в структурированный, Gemini-анализ с ранговыми метриками, визуализацией и хирургической точностью.
 
 <br/>
 
@@ -413,7 +413,7 @@ npm run dev
 
 ### AI-коучинг
 
-![OpenAI](https://img.shields.io/badge/GPT--4o-Engine-412991?style=flat-square&labelColor=0d1117)
+![Gemini](https://img.shields.io/badge/Gemini-Engine-4285f4?style=flat-square&logo=google&labelColor=0d1117&logoColor=white)
 
 - **Анализ каждого матча** — Структурированный промпт: герой, KDA, GPM, предметы, тайминги, роль, нетворс
 - **Разговорный контекст** — Уточняющие вопросы сохраняют контекст матча в едином чате
@@ -487,7 +487,7 @@ npm run dev
                │                             │
                v                             v
  ┌─────────────────────┐        ┌────────────────────────┐
- │   OpenDota API      │        │    OpenAI GPT-4o       │
+ │   OpenDota API      │        │    Google Gemini       │
  │                     │        │                        │
  │  /players/{id}      │        │  Структурированный     │
  │  /players/{id}/wl   │        │  промпт матча          │
@@ -508,7 +508,7 @@ npm run dev
 | ![Celery](https://img.shields.io/badge/-Celery-37814a?logo=celery&logoColor=white&style=flat-square) | Celery + Redis | Асинхронный пайплайн синхронизации |
 | ![PG](https://img.shields.io/badge/-PostgreSQL-4169e1?logo=postgresql&logoColor=white&style=flat-square) | PostgreSQL | Основное хранилище |
 | ![OD](https://img.shields.io/badge/-OpenDota_API-ff6f00?style=flat-square) | OpenDota API | Данные Dota 2, ключ не нужен |
-| ![OAI](https://img.shields.io/badge/-OpenAI-412991?logo=openai&logoColor=white&style=flat-square) | GPT-4o | Движок анализа и коучинга |
+| ![Gemini](https://img.shields.io/badge/-Gemini-4285f4?logo=google&logoColor=white&style=flat-square) | Google Gemini | Движок анализа и коучинга |
 
 ---
 
@@ -520,7 +520,7 @@ npm run dev
 ![Node](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white)
 ![PG](https://img.shields.io/badge/PostgreSQL-обязательно-4169e1?style=flat-square&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-обязательно-dc382d?style=flat-square&logo=redis&logoColor=white)
-![OAI](https://img.shields.io/badge/OpenAI-API_ключ-412991?style=flat-square&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-API_ключ-4285f4?style=flat-square&logo=google&logoColor=white)
 
 ### 1. Клонирование
 
@@ -549,7 +549,9 @@ cp .env.example .env
 ```env
 DATABASE_URL=postgres://user:password@localhost:5432/aegis
 REDIS_URL=redis://localhost:6379/0
-OPENAI_API_KEY=sk-...
+LLM_API_KEY=your-gemini-compatible-key
+LLM_BASE_URL=http://127.0.0.1:8045/v1
+LLM_MODEL=gemini-3.1-pro-high
 SECRET_KEY=ваш-django-секретный-ключ
 DEBUG=True
 ```
@@ -592,7 +594,7 @@ npm run dev
 
 > **Устойчивость к rate-limit:** Эндпоинт `/heroes` вызывается последним в пайплайне, после 20+ запросов деталей матча. Применяется 2 попытки с ожиданием 3 секунды. При неудаче функция завершается корректно — существующие данные героев **никогда не перезаписываются** деградированными.
 
-> **Контекст AI-промпта:** GPT получает: герой, KDA, GPM, XPM, сборка предметов с таймингами, роль на лайне, нетворс, таймлайн золотого преимущества и пожизненная статистика героя. Это позволяет модели соотнести производительность в матче с историческим базисом игрока.
+> **Контекст AI-промпта:** Gemini получает: герой, KDA, GPM, XPM, сборка предметов с таймингами, роль на лайне, нетворс, таймлайн золотого преимущества и пожизненная статистика героя. Это позволяет модели соотнести производительность в матче с историческим базисом игрока.
 
 ---
 
