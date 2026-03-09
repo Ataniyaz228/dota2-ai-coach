@@ -14,6 +14,7 @@ import type {
     TrendData,
 } from "@/lib/types";
 import TrendChart from "@/components/TrendChart";
+import CoachAnalysis from "@/components/CoachAnalysis";
 import { parseRankTier, formatMmrRange } from "@/lib/ranks";
 
 function DashboardContent() {
@@ -116,6 +117,10 @@ function DashboardContent() {
 
     const stats = overview.stats;
     const rank = parseRankTier(overview.player.rank_tier);
+    const lifetimeLosses = stats.lifetime_matches - stats.lifetime_wins;
+    const lifetimeWinrate = stats.lifetime_matches > 0
+        ? ((stats.lifetime_wins / stats.lifetime_matches) * 100).toFixed(2)
+        : "0.00";
 
     return (
         <div className="container dashboard">
@@ -130,15 +135,33 @@ function DashboardContent() {
                         />
                     )}
                     <div className="dash-identity">
-                        <div className="dash-name">
-                            {overview.player.personaname || "Player"}
+                        <div className="dash-name" style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+                            <span>{overview.player.personaname || "Player"}</span>
+                            <span className="dash-rank mono" style={{ fontSize: '0.9rem', color: 'var(--text-dim)', marginTop: 2 }}>
+                                {rank.display}
+                                {rank.mmrEstimate > 0 && (
+                                    <span className="dash-mmr" style={{ marginLeft: '8px' }}>{formatMmrRange(rank)} MMR</span>
+                                )}
+                            </span>
                         </div>
-                        <div className="dash-rank">
-                            <span className="mono">{rank.display}</span>
-                            {rank.mmrEstimate > 0 && (
-                                <span className="dash-mmr">{formatMmrRange(rank)} MMR</span>
-                            )}
-                        </div>
+
+                        {/* OpenDota Lifetime W/L Block */}
+                        {stats.lifetime_matches > 0 && (
+                            <div style={{ display: 'flex', gap: '24px', marginTop: '12px', alignItems: 'flex-start' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    <span style={{ fontSize: '0.65rem', color: 'var(--text-dim)', letterSpacing: '0.5px' }}>ПОБЕДЫ</span>
+                                    <span style={{ color: 'var(--win)', fontSize: '1.25rem', fontWeight: 600 }}>{stats.lifetime_wins}</span>
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    <span style={{ fontSize: '0.65rem', color: 'var(--text-dim)', letterSpacing: '0.5px' }}>ПОРАЖЕНИЯ</span>
+                                    <span style={{ color: 'var(--loss)', fontSize: '1.25rem', fontWeight: 600 }}>{lifetimeLosses}</span>
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    <span style={{ fontSize: '0.65rem', color: 'var(--text-dim)', letterSpacing: '0.5px' }}>ДОЛЯ ПОБЕД</span>
+                                    <span style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)' }}>{lifetimeWinrate}%</span>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="dash-header-right">
@@ -166,13 +189,13 @@ function DashboardContent() {
             {/* Metric cards — left-aligned, accent borders */}
             <div className="metric-grid">
                 <MetricCard
-                    value={stats.total_matches.toString()}
-                    label="МАТЧЕЙ"
+                    value={stats.recent_matches_analyzed.toString()}
+                    label="НЕДАВНИХ МАТЧЕЙ"
                     accent="var(--text-dim)"
                 />
                 <MetricCard
                     value={`${(stats.recent_winrate * 100).toFixed(1)}%`}
-                    label="ВИНРЕЙТ (20)"
+                    label={`НЕДАВНИЙ ВИНРЕЙТ`}
                     accent={stats.recent_winrate >= 0.5 ? "var(--win)" : "var(--loss)"}
                     valueColor={stats.recent_winrate >= 0.5 ? "var(--win)" : "var(--loss)"}
                 />
@@ -210,7 +233,7 @@ function DashboardContent() {
                     </div>
                     <div className="chart-container">
                         {trends && trends.data_points.length > 0 ? (
-                            <TrendChart data={trends} />
+                            <TrendChart data={trends} accountId={accountId} />
                         ) : (
                             <div className="empty-state">Нет данных</div>
                         )}
@@ -262,6 +285,9 @@ function DashboardContent() {
                 </div>
             </div>
 
+            {/* AI Coach */}
+            <CoachAnalysis accountId={accountId} />
+
             {/* Match History */}
             <div className="card">
                 <div className="card-header">
@@ -285,7 +311,7 @@ function DashboardContent() {
                                 <tr
                                     key={pm.id}
                                     className={`match-row ${pm.win ? "win" : "loss"}`}
-                                    onClick={() => window.location.href = `/match/${pm.match.match_id}`}
+                                    onClick={() => window.location.href = `/match/${pm.match.match_id}?account_id=${accountId}`}
                                 >
                                     <td>
                                         <div className="hero-avatar">

@@ -58,6 +58,8 @@ def dashboard_overview(request, account_id):
             'recent_winrate': round(winrate, 3),
             'recent_avg_kda': round(avg_kda, 2),
             'recent_avg_gpm': round(avg_gpm, 0),
+            'lifetime_matches': player.lifetime_matches,
+            'lifetime_wins': player.lifetime_wins,
         },
         'top_heroes': PlayerHeroStatsSerializer(top_heroes, many=True).data,
     })

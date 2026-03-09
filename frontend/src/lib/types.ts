@@ -66,6 +66,8 @@ export interface DashboardOverview {
         recent_winrate: number;
         recent_avg_kda: number;
         recent_avg_gpm: number;
+        lifetime_matches: number;
+        lifetime_wins: number;
     };
     top_heroes: HeroStat[];
 }

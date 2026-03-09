@@ -18,6 +18,9 @@ class Player(models.Model):
     leaderboard_rank = models.IntegerField(null=True, blank=True)
     estimated_mmr = models.IntegerField(null=True, blank=True)
 
+    lifetime_wins = models.IntegerField(default=0)
+    lifetime_matches = models.IntegerField(default=0)
+
     sync_status = models.CharField(
         max_length=20,
         choices=SyncStatus.choices,

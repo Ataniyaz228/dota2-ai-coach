@@ -11,6 +11,7 @@ class PlayerSerializer(serializers.ModelSerializer):
             'id', 'account_id', 'steam_id_64', 'personaname', 'avatar_url',
             'rank_tier', 'rank_display', 'leaderboard_rank', 'estimated_mmr',
             'sync_status', 'last_synced_at', 'created_at',
+            'lifetime_wins', 'lifetime_matches',
         ]
         read_only_fields = fields
 

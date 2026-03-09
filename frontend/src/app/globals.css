@@ -1164,6 +1164,260 @@ select.input {
 }
 
 /* =================================================
+   AI COACH
+   ================================================= */
+
+.coach-card {
+  margin-bottom: 24px;
+  border-top: 2px solid var(--accent);
+}
+
+.coach-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-border);
+}
+
+.coach-summary {
+  display: flex;
+  gap: 1px;
+  background: var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+  margin: 0 -20px;
+  padding: 0;
+}
+
+.coach-chip {
+  flex: 1;
+  background: var(--bg-surface);
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.coach-chip-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  line-height: 1.2;
+}
+
+.coach-chip-label {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+  display: block;
+}
+
+.coach-loading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 0;
+}
+
+.coach-empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.coach-empty-icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+  opacity: 0.3;
+  margin-bottom: 8px;
+}
+
+/* Coach result markdown */
+.coach-result {
+  padding: 16px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.coach-result .coach-h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 20px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.coach-result .coach-h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 16px 0 6px;
+}
+
+.coach-result .coach-h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 12px 0 4px;
+}
+
+.coach-result strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.coach-result ul {
+  padding-left: 16px;
+  margin: 6px 0;
+}
+
+.coach-result li {
+  margin-bottom: 4px;
+}
+
+.coach-result p {
+  margin: 6px 0;
+}
+
+/* Coach chat */
+.coach-chat-history {
+  border-top: 1px solid var(--border-primary);
+  padding: 12px 0 0;
+}
+
+.coach-msg {
+  margin-bottom: 12px;
+}
+
+.coach-msg-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+
+.coach-msg-user .coach-msg-label {
+  color: var(--accent);
+}
+
+.coach-msg-assistant .coach-msg-label {
+  color: var(--text-dim);
+}
+
+.coach-msg-content {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.coach-msg-user .coach-msg-content {
+  color: var(--text-primary);
+  padding-left: 10px;
+  border-left: 2px solid var(--accent);
+}
+
+.coach-msg-content>div {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.coach-msg-content h2,
+.coach-msg-content h3,
+.coach-msg-content h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 12px 0 4px;
+}
+
+.coach-msg-content strong {
+  color: var(--text-primary);
+}
+
+.coach-msg-content ul {
+  padding-left: 16px;
+  margin: 4px 0;
+}
+
+.coach-msg-content li {
+  margin-bottom: 3px;
+}
+
+.coach-msg-content p {
+  margin: 4px 0;
+}
+
+/* Chat form */
+.coach-chat-form {
+  display: flex;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-primary);
+  margin-top: 12px;
+}
+
+.coach-chat-input {
+  flex: 1;
+}
+
+.coach-chat-send {
+  padding: 6px 14px !important;
+  font-size: 1rem !important;
+  min-width: 36px;
+}
+
+/* Typing animation */
+.coach-typing {
+  display: flex;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.coach-typing span {
+  width: 5px;
+  height: 5px;
+  background: var(--text-dim);
+  border-radius: 50%;
+  animation: typing-bounce 1.2s ease-in-out infinite;
+}
+
+.coach-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.coach-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typing-bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* =================================================
    SCROLLBAR
    ================================================= */
 

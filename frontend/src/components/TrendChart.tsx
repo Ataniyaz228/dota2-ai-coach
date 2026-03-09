@@ -16,6 +16,7 @@ import type { TrendData } from "@/lib/types";
 
 interface TrendChartProps {
     data: TrendData;
+    accountId?: number;
 }
 
 const METRIC_LABELS: Record<string, string> = {
@@ -65,7 +66,7 @@ function CustomTooltip({ active, payload, metric }: any) {
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-export default function TrendChart({ data }: TrendChartProps) {
+export default function TrendChart({ data, accountId }: TrendChartProps) {
     const router = useRouter();
 
     // Each data point gets a unique sequential index as X-axis key.
@@ -128,7 +129,7 @@ export default function TrendChart({ data }: TrendChartProps) {
                 onClick={(e) => {
                     e.stopPropagation();
                     if (matchId) {
-                        router.push(`/match/${matchId}`);
+                        router.push(`/match/${matchId}${accountId ? `?account_id=${accountId}` : ''}`);
                     }
                 }}
             />

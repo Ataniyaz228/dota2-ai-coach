@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import { getMatchDetail } from "@/lib/api";
+import { useEffect, useState, useRef } from "react";
+import { useParams, useSearchParams } from "next/navigation";
+import { getMatchDetail, getCoachMatchAnalysis, coachChat } from "@/lib/api";
+import { useItemMap, resolveSlots, getItemTiming } from "@/lib/items";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -13,6 +16,21 @@ export default function MatchDetailPage() {
     const [match, setMatch] = useState<any>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [aiAnalysis, setAiAnalysis] = useState<string | null>(null);
+    const [aiLoading, setAiLoading] = useState(false);
+    const searchParams = useSearchParams();
+    const accountId = searchParams.get("account_id");
+    const itemMap = useItemMap();
+
+    // Chat state for match analysis
+    const [chatMessages, setChatMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
+    const [chatInput, setChatInput] = useState("");
+    const [chatLoading, setChatLoading] = useState(false);
+    const chatEndRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [chatMessages]);
 
     useEffect(() => {
         if (!matchId) return;
@@ -103,10 +121,10 @@ export default function MatchDetailPage() {
             </div>
 
             {/* Radiant */}
-            <TeamTable title="RADIANT" players={radiantPlayers} isWinner={match.radiant_win} />
+            <TeamTable title="RADIANT" players={radiantPlayers} isWinner={match.radiant_win} itemMap={itemMap} />
 
             {/* Dire */}
-            <TeamTable title="DIRE" players={direPlayers} isWinner={!match.radiant_win} />
+            <TeamTable title="DIRE" players={direPlayers} isWinner={!match.radiant_win} itemMap={itemMap} />
 
             {/* Anonymous notice */}
             {missingPlayers > 0 && (
@@ -138,6 +156,116 @@ export default function MatchDetailPage() {
                 </div>
             )}
 
+            {/* AI Match Analysis */}
+            {accountId && (
+                <div className="card coach-card" style={{ marginTop: 24 }}>
+                    <div className="card-header">
+                        <span className="card-title">
+                            <span className="coach-icon">AI</span>
+                            Анализ матча
+                        </span>
+                        <button
+                            className="btn btn-primary"
+                            onClick={async () => {
+                                setAiLoading(true);
+                                try {
+                                    const result = await getCoachMatchAnalysis(matchId, parseInt(accountId));
+                                    setAiAnalysis(result.analysis);
+                                    setChatMessages([{ role: "assistant", content: result.analysis }]);
+                                } catch {
+                                    setAiAnalysis("Ошибка при анализе матча");
+                                } finally {
+                                    setAiLoading(false);
+                                }
+                            }}
+                            disabled={aiLoading}
+                            style={{ padding: "5px 14px", fontSize: "0.75rem" }}
+                        >
+                            {aiLoading ? "Анализирую..." : "Разобрать матч"}
+                        </button>
+                    </div>
+                    {aiLoading && (
+                        <div className="coach-loading">
+                            <div className="loading-spinner" />
+                            <span style={{ color: "var(--text-dim)", fontSize: "0.8rem" }}>AI анализирует матч...</span>
+                        </div>
+                    )}
+                    {chatMessages.length === 0 && !aiLoading && (
+                        <div className="coach-empty">
+                            <div className="coach-empty-icon">◇</div>
+                            <div>Нажмите «Разобрать матч» для AI-разбора<br />этого конкретного матча</div>
+                        </div>
+                    )}
+
+                    {/* Chat messages */}
+                    {chatMessages.length > 0 && (
+                        <div className="coach-chat-history">
+                            {chatMessages.map((msg, i) => (
+                                <div key={i} className={`coach-msg coach-msg-${msg.role}`}>
+                                    <div className="coach-msg-label">
+                                        {msg.role === "user" ? "Вы" : "AI Coach"}
+                                    </div>
+                                    <div className="coach-msg-content coach-result">
+                                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                            {msg.content}
+                                        </ReactMarkdown>
+                                    </div>
+                                </div>
+                            ))}
+                            {chatLoading && (
+                                <div className="coach-msg coach-msg-assistant">
+                                    <div className="coach-msg-label">AI Coach</div>
+                                    <div className="coach-msg-content">
+                                        <div className="coach-typing">
+                                            <span /><span /><span />
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                            <div ref={chatEndRef} />
+                        </div>
+                    )}
+
+                    {/* Chat input */}
+                    {aiAnalysis && !aiLoading && accountId && (
+                        <form className="coach-chat-form" onSubmit={async (e) => {
+                            e.preventDefault();
+                            const text = chatInput.trim();
+                            if (!text || chatLoading) return;
+                            const userMsg = { role: "user" as const, content: text };
+                            const newMsgs = [...chatMessages, userMsg];
+                            setChatMessages(newMsgs);
+                            setChatInput("");
+                            setChatLoading(true);
+                            try {
+                                const result = await coachChat(parseInt(accountId), newMsgs);
+                                setChatMessages([...newMsgs, { role: "assistant", content: result.reply }]);
+                            } catch {
+                                setChatMessages([...newMsgs, { role: "assistant", content: "Ошибка. Попробуйте ещё раз." }]);
+                            } finally {
+                                setChatLoading(false);
+                            }
+                        }}>
+                            <input
+                                className="input coach-chat-input"
+                                type="text"
+                                placeholder="Задайте вопрос по этому матчу..."
+                                value={chatInput}
+                                onChange={(e) => setChatInput(e.target.value)}
+                                disabled={chatLoading}
+                            />
+                            <button
+                                type="submit"
+                                className="btn btn-primary coach-chat-send"
+                                disabled={chatLoading || !chatInput.trim()}
+                            >
+                                →
+                            </button>
+                        </form>
+                    )}
+                </div>
+            )}
+
             {/* Back */}
             <div style={{ marginTop: 24 }}>
                 <button className="btn btn-ghost" onClick={() => window.history.back()}>
@@ -152,10 +280,12 @@ function TeamTable({
     title,
     players,
     isWinner,
+    itemMap,
 }: {
     title: string;
     players: any[];
     isWinner: boolean;
+    itemMap: Record<number, { id: number; name: string; dname: string; cost: number; img: string }>;
 }) {
     return (
         <div className="card" style={{ marginBottom: 16 }}>
@@ -181,6 +311,7 @@ function TeamTable({
                         <th>Урон строениям</th>
                         <th>Лечение</th>
                         <th>LVL</th>
+                        <th>Предметы</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -218,6 +349,33 @@ function TeamTable({
                                 {p.hero_healing ? `${(p.hero_healing / 1000).toFixed(1)}k` : "—"}
                             </td>
                             <td className="mono">{p.level}</td>
+                            <td>
+                                <div style={{ display: "flex", gap: 2 }}>
+                                    {resolveSlots(p.items_final, itemMap).map((item, idx) => {
+                                        const timeStr = getItemTiming(item.name, p.purchase_log);
+                                        return (
+                                            <div key={idx} style={{ display: "flex", flexDirection: "column", alignItems: "center", width: 24 }}>
+                                                <img
+                                                    src={item.img}
+                                                    alt={item.dname}
+                                                    title={`${item.dname} (${item.cost}g)${timeStr ? ` - Куплен на ${timeStr}` : ""}`}
+                                                    style={{
+                                                        width: 24,
+                                                        height: 18,
+                                                        borderRadius: 2,
+                                                        border: "1px solid var(--border-primary)",
+                                                    }}
+                                                />
+                                                {timeStr && (
+                                                    <span style={{ fontSize: "0.55rem", color: "var(--text-dim)", marginTop: 2, letterSpacing: "-0.5px" }}>
+                                                        {timeStr}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

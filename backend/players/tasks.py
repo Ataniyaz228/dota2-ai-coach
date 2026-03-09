@@ -30,7 +30,7 @@ def sync_player_data(self, account_id):
         _sync_matches(client, player)
 
         # Phase 3: Aggregate hero stats
-        _update_hero_stats(player)
+        _update_hero_stats(client, player)
 
         # Done
         player.sync_status = Player.SyncStatus.READY
@@ -122,9 +122,20 @@ def _sync_profile(client, player):
     player.leaderboard_rank = data.get('leaderboard_rank')
     player.estimated_mmr = data.get('computed_mmr')
 
+    # Fetch total lifetime win/loss
+    try:
+        wl_data = client.get_player_wl(player.account_id)
+        wins = wl_data.get('win', 0)
+        losses = wl_data.get('lose', 0)
+        player.lifetime_wins = wins
+        player.lifetime_matches = wins + losses
+    except Exception as e:
+        logger.warning(f"Failed to fetch wl for {player.account_id}: {e}")
+
     player.save(update_fields=[
         'personaname', 'avatar_url', 'steam_id_64',
         'rank_tier', 'leaderboard_rank', 'estimated_mmr',
+        'lifetime_wins', 'lifetime_matches',
     ])
 
     # Trigger refresh on OpenDota to ensure latest data
@@ -342,17 +353,37 @@ def _ensure_player_match(player, match_id, summary):
     )
 
 
-def _update_hero_stats(player):
+def _update_hero_stats(client, player):
     """Aggregate player's match data into per-hero stats."""
     from django.db.models import Avg, Count, Sum, Max, Case, When, Value, IntegerField
 
-    hero_data = (
+    # 1. Fetch Global Lifetime Stats from OpenDota (gives true games/wins counts)
+    import time
+    global_map = {}
+    for attempt in range(2):
+        try:
+            if attempt > 0:
+                time.sleep(3)  # Wait before retry to avoid rate limit
+            global_heroes = client.get_player_heroes(player.account_id)
+            if global_heroes:
+                global_map = {str(h['hero_id']): h for h in global_heroes}
+                break
+            else:
+                logger.warning(f'Empty response from /heroes for {player.account_id}, attempt {attempt+1}')
+        except Exception as e:
+            logger.warning(f'Attempt {attempt+1} failed to fetch global heroes for {player.account_id}: {e}')
+    
+    if not global_map:
+        logger.error(f'Could not fetch global heroes for {player.account_id} after retries, skipping hero stats update')
+        return
+
+    # 2. Aggregate Recent Detailed Stats from local DB (for GPM, KDA, etc)
+    recent_data = (
         PlayerMatch.objects
         .filter(player=player)
         .values('hero_id')
         .annotate(
-            games=Count('id'),
-            wins=Sum(Case(When(win=True, then=Value(1)), default=Value(0), output_field=IntegerField())),
+            local_games=Count('id'),
             avg_kda=Avg('kda'),
             avg_gpm=Avg('gold_per_min'),
             avg_xpm=Avg('xp_per_min'),
@@ -363,23 +394,44 @@ def _update_hero_stats(player):
         )
     )
 
-    for hd in hero_data:
-        if not hd['hero_id']:
+    recent_map = {hd['hero_id']: hd for hd in recent_data if hd['hero_id']}
+
+    # 3. Merge and Save
+    # We want to keep records for all heroes the player has played (at least globally)
+    # But to prevent creating 120 blank rows, let's only create rows where they played > 0 games.
+    
+    all_played_heroes = set(int(h) for h in global_map.keys()) | set(recent_map.keys())
+    
+    for hero_id in all_played_heroes:
+        g_stats = global_map.get(str(hero_id), {})
+        r_stats = recent_map.get(hero_id, {})
+        
+        games_played = g_stats.get('games', 0)
+        wins = g_stats.get('win', 0)
+        
+        # Fallback to local count if global fails for some reason
+        if not games_played and r_stats:
+            games_played = r_stats.get('local_games', 0)
+            
+        if games_played == 0:
             continue
+
         PlayerHeroStats.objects.update_or_create(
             player=player,
-            hero_id=hd['hero_id'],
+            hero_id=hero_id,
             defaults={
-                'games_played': hd['games'],
-                'wins': hd['wins'] or 0,
-                'avg_kda': round(hd['avg_kda'] or 0, 2),
-                'avg_gpm': round(hd['avg_gpm'] or 0, 2),
-                'avg_xpm': round(hd['avg_xpm'] or 0, 2),
-                'avg_hero_damage': round(hd['avg_hero_damage'] or 0, 2),
-                'avg_tower_damage': round(hd['avg_tower_damage'] or 0, 2),
-                'avg_last_hits': round(hd['avg_last_hits'] or 0, 2),
-                'last_played': hd['last_played'],
+                'games_played': games_played,
+                'wins': wins,
+                'avg_kda': round(r_stats.get('avg_kda') or 0, 2),
+                'avg_gpm': round(r_stats.get('avg_gpm') or 0, 2),
+                'avg_xpm': round(r_stats.get('avg_xpm') or 0, 2),
+                'avg_hero_damage': round(r_stats.get('avg_hero_damage') or 0, 2),
+                'avg_tower_damage': round(r_stats.get('avg_tower_damage') or 0, 2),
+                'avg_last_hits': round(r_stats.get('avg_last_hits') or 0, 2),
+                'last_played': r_stats.get('last_played') if r_stats else None,
             }
         )
+
+    logger.info(f'Hero stats updated for {player.personaname} (Global + Recent merged)')
 
     logger.info(f'Updated hero stats for {player.personaname}')

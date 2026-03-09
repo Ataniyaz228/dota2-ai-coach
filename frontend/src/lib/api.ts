@@ -45,3 +45,22 @@ export const getDashboardTrends = (accountId: number, metric: string, limit = 30
 
 // Heroes
 export const getHeroes = () => fetchAPI('/heroes/');
+
+// AI Coach
+export const getCoachAnalysis = (accountId: number, matchLimit = 20) =>
+    fetchAPI(`/coach/analyze/${accountId}/`, {
+        method: 'POST',
+        body: JSON.stringify({ match_limit: matchLimit }),
+    });
+
+export const getCoachMatchAnalysis = (matchId: number, accountId: number) =>
+    fetchAPI(`/coach/match/${matchId}/`, {
+        method: 'POST',
+        body: JSON.stringify({ account_id: accountId }),
+    });
+
+export const coachChat = (accountId: number, messages: { role: string; content: string }[]) =>
+    fetchAPI(`/coach/chat/${accountId}/`, {
+        method: 'POST',
+        body: JSON.stringify({ messages }),
+    });
