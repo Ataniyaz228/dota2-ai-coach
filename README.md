@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./docs/logo.png" alt="Aegis.AI" width="480" />
+<img src="./docs/logo.png" alt="Aegis.AI" width="200" />
 
 <br/>
 
@@ -91,7 +91,7 @@ It transforms raw match telemetry into structured, GPT-powered coaching — rank
 
 ![OpenAI](https://img.shields.io/badge/GPT--4o-Engine-412991?style=flat-square&labelColor=0d1117)
 
-- **Per-Match Analysis** — Structured GPT prompt with hero, KDA, GPM, items, timing, laning role, net worth
+- **Per-Match Analysis** — Structured Gemini prompt with hero, KDA, GPM, items, timing, laning role, net worth
 - **Conversational Context** — Follow-up questions retain full match context in unified chat interface
 - **Historical Baseline** — AI contextualizes individual match vs. lifetime hero performance
 - **No Fragmented UI** — Single scrollable conversation, no nested panels, no internal scrollbars
@@ -163,11 +163,11 @@ It transforms raw match telemetry into structured, GPT-powered coaching — rank
                │                             │
                v                             v
  ┌─────────────────────┐        ┌────────────────────────┐
- │   OpenDota API      │        │    OpenAI GPT-4o       │
+ │   OpenDota API      │        │    Google Gemini       │
  │                     │        │                        │
  │  /players/{id}      │        │  Match analysis prompt │
  │  /players/{id}/wl   │        │  Conversational chat   │
- │  /players/{id}/heroes│        │  Item timing context  │
+ │  Structured context │        │  Item timing & history │
  │  /matches/{id}      │        └────────────────────────┘
  └─────────────────────┘
 ```
@@ -184,7 +184,7 @@ It transforms raw match telemetry into structured, GPT-powered coaching — rank
 | ![Celery](https://img.shields.io/badge/-Celery-37814a?logo=celery&logoColor=white&style=flat-square) | Celery + Redis | Async sync pipeline, background tasks |
 | ![PG](https://img.shields.io/badge/-PostgreSQL-4169e1?logo=postgresql&logoColor=white&style=flat-square) | PostgreSQL | Primary datastore |
 | ![OD](https://img.shields.io/badge/-OpenDota_API-ff6f00?style=flat-square) | OpenDota API | Free Dota 2 stats, no key needed |
-| ![OAI](https://img.shields.io/badge/-OpenAI-412991?logo=openai&logoColor=white&style=flat-square) | GPT-4o | Match analysis and coaching engine |
+| ![Gemini](https://img.shields.io/badge/-Gemini-4285f4?logo=google&logoColor=white&style=flat-square) | Google Gemini | Match analysis and coaching engine |
 
 ---
 
@@ -196,7 +196,7 @@ It transforms raw match telemetry into structured, GPT-powered coaching — rank
 ![Node](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white)
 ![PG](https://img.shields.io/badge/PostgreSQL-required-4169e1?style=flat-square&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-required-dc382d?style=flat-square&logo=redis&logoColor=white)
-![OAI](https://img.shields.io/badge/OpenAI-API_Key-412991?style=flat-square&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-API_Key-4285f4?style=flat-square&logo=google&logoColor=white)
 
 ### 1. Clone
 
@@ -225,7 +225,9 @@ Edit `.env`:
 ```env
 DATABASE_URL=postgres://user:password@localhost:5432/aegis
 REDIS_URL=redis://localhost:6379/0
-OPENAI_API_KEY=sk-...
+LLM_API_KEY=your-gemini-compatible-key
+LLM_BASE_URL=http://127.0.0.1:8045/v1
+LLM_MODEL=gemini-2.5-pro
 SECRET_KEY=your-django-secret-key
 DEBUG=True
 ```
